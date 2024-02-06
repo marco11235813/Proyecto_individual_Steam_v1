@@ -34,7 +34,7 @@ En el documento [Diccionario de datos](https://github.com/IngCarlaPezzone/PI1_ML
 
 Se realizó la extracción, transformación y carga (ETL) de los tres conjuntos de datos entregados. Dos de los conjuntos de datos se encontraban anidados, es decir había columnas con diccionarios o listas de diccionarios, por lo que aplicaron distintas estrategias para transformar las claves de esos diccionarios en columnas. Luego se rellenaron algunos nulos de variables necesarias para el proyecto, se borraron columnas con muchos nulos o que no aportaban al proyecto, para optimizar el rendimiento de la API y teneniendo en cuenta las limitaciones de almacenamiento del deploy. Para las transformaciones se utilizó la librería Pandas.
 
-Los detalles del ETL se puede ver en las carpetas[steam_games](https://github.com/marco11235813/Proyecto_individual_Steam_v1/tree/main/steam_games), [users_items](https://github.com/marco11235813/Proyecto_individual_Steam_v1/tree/main/users_items) y [user_reviews](https://github.com/marco11235813/Proyecto_individual_Steam_v1/tree/main/user_reviews).
+Los detalles del ETL se puede ver en las carpetas [steam_games](https://github.com/marco11235813/Proyecto_individual_Steam_v1/tree/main/steam_games), [users_items](https://github.com/marco11235813/Proyecto_individual_Steam_v1/tree/main/users_items) y [user_reviews](https://github.com/marco11235813/Proyecto_individual_Steam_v1/tree/main/user_reviews).
 
 ### Feature engineering
 
@@ -88,7 +88,7 @@ Para el desarrolo de la API se decidió utilizar el framework FastAPI, creando l
 
 * **developer_reviews_analysis**: Esta función recibe como parámetro un desarrollador y se devuelve un diccionario con el nombre del desarrollador como llave y una lista con la cantidad total de registros de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento como valor positivo o negativo.
 
-* **recomendacion_juego**: Esta funcion toma como parametro el id de un juego (item) y realiza una busqueda de similitud
+* **item_recomendacion**: Esta funcion toma como parametro el id de un juego (item) y realiza una busqueda de similitud
     para encontrar juegos similares
     esta busqueda se basa en un modelo de recomendacion centrado en la similitud del coseno
     devuelve una lista de los 5 juegos recomendados mas similares al juego ingresado
