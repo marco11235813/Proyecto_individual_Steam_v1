@@ -34,7 +34,7 @@ En el documento [Diccionario de datos](https://github.com/IngCarlaPezzone/PI1_ML
 
 Se realizó la extracción, transformación y carga (ETL) de los tres conjuntos de datos entregados. Dos de los conjuntos de datos se encontraban anidados, es decir había columnas con diccionarios o listas de diccionarios, por lo que aplicaron distintas estrategias para transformar las claves de esos diccionarios en columnas. Luego se rellenaron algunos nulos de variables necesarias para el proyecto, se borraron columnas con muchos nulos o que no aportaban al proyecto, para optimizar el rendimiento de la API y teneniendo en cuenta las limitaciones de almacenamiento del deploy. Para las transformaciones se utilizó la librería Pandas.
 
-Los detalles del ETL se puede ver en [ETL output_steam_games](https://github.com/IngCarlaPezzone/PI1_MLOps_videojuegos/blob/main/JupyterNotebooks/01a_ETL_steam_games.ipynb), [ETL australian_users_items](https://github.com/IngCarlaPezzone/PI1_MLOps_videojuegos/blob/main/JupyterNotebooks/01b_ETL_user_items.ipynb) y [ETL australian_user_reviews](https://github.com/IngCarlaPezzone/PI1_MLOps_videojuegos/blob/main/JupyterNotebooks/01c_ETL_user_reviews.ipynb).
+Los detalles del ETL se puede ver en las carpetas[steam_games](https://github.com/marco11235813/Proyecto_individual_Steam_v1/tree/main/steam_games), [users_items](https://github.com/marco11235813/Proyecto_individual_Steam_v1/tree/main/users_items) y [user_reviews](https://github.com/marco11235813/Proyecto_individual_Steam_v1/tree/main/user_reviews).
 
 ### Feature engineering
 
@@ -50,7 +50,8 @@ Esta metodología toma una revisión de texto como entrada, utiliza TextBlob par
 
 Por otra parte, y bajo el mismo criterio de optimizar los tiempos de respuesta de las consultas en la API y teniendo en cuenta las limitaciones de almacenamiento en el servicio de nube para deployar la API, se realizaron dataframes auxiliares para cada una de las funciones solicitadas. En el mismo sentido, se guardaron estos dataframes en formato *parquet* que permite una compresión y codificación eficiente de los datos.
 
-Todos los detalles del desarrollo se pueden ver en la Jupyter Notebook [01d_Feature_eng](https://github.com/IngCarlaPezzone/PI1_MLOps_videojuegos/blob/main/JupyterNotebooks/01d_Feature_eng.ipynb).
+Todos los detalles del desarrollo se pueden ver en la carpeta [feature_engineer](https://github.com/marco11235813/Proyecto_individual_Steam_v1/blob/main/feature_engineer/feature_engineer-v1.ipynb
+).
 
 ### Análisis exploratorio de los datos
 
@@ -58,7 +59,7 @@ Se realizó el EDA a los tres conjuntos de datos sometidos a ETL con el objetivo
 
 En particular para el modelo de recomendación, se terminó eligiendo construir un dataframe específico con el id del usuario que realizaron reviews, los nombres de los juegos a los cuales se le realizaron comentarios y una columna de rating que se construyó a partir de la combinación del análisis de sentimiento y la recomendación a los juegos.
 
-El desarrollo de este análisis se encuentra en la Jupyter Notebook [EDA](https://github.com/IngCarlaPezzone/PI1_MLOps_videojuegos/blob/main/JupyterNotebooks/03_EDA.ipynb)
+El desarrollo de este análisis se encuentra en la carpeta EDA, en el archivo .ipynb [EDA](https://github.com/marco11235813/Proyecto_individual_Steam_v1/blob/main/EDA/EDA.ipynb)
 
 ### Modelo de aprendizaje automático
 
@@ -70,7 +71,8 @@ Para generar estos modelos se adoptaron algoritmos basados en la memoria, los qu
 
 Para medir la similitud entre los juegos (item_similarity) y entre los usuarios (user_similarity) se utilizó la **similitud del coseno** que es una medida comúnmente utilizada para evaluar la similitud entre dos vectores en un espacio multidimensional. En el contexto de sistemas de recomendación y análisis de datos, la similitud del coseno se utiliza para determinar cuán similares son dos conjuntos de datos o elementos, y se calcula utilizando el coseno del ángulo entre los vectores que representan esos datos o elementos.
 
-El desarrollo para la creación de los dos modelos se presenta en la Jupyter Notebook [04_Modelo_recomendacion](https://github.com/IngCarlaPezzone/PI1_MLOps_videojuegos/blob/main/JupyterNotebooks/04_Modelo_recomendacion.ipynb).
+El desarrollo para la creación del modelo se encuentra en la carpeta [modelo_machine_learning](https://github.com/marco11235813/Proyecto_individual_Steam_v1/blob/main/modelo_machine_learning/modelo.ipynb
+).
 
 ### Desarrollo de API
 
@@ -91,10 +93,9 @@ Para el desarrolo de la API se decidió utilizar el framework FastAPI, creando l
     esta busqueda se basa en un modelo de recomendacion centrado en la similitud del coseno
     devuelve una lista de los 5 juegos recomendados mas similares al juego ingresado
 
-El desarrollo de las funciones de consultas generales se puede ver en la Jupyter Notebook [02_funcionesAPI](https://github.com/IngCarlaPezzone/PI1_MLOps_videojuegos/blob/main/JupyterNotebooks/02_funcionesAPI.ipynb). El desarrollo del código para las funciones del modelo de recomendación se puede ver en la Jupyter Notebook [04_Modelo_recomendacion](https://github.com/IngCarlaPezzone/PI1_MLOps_videojuegos/blob/main/JupyterNotebooks/04_Modelo_recomendacion.ipynb)
+El desarrollo de las funciones se puede ver en el script [funciones_api]().
 
-El código para generar la API se encuentra en el archivo [main.py](https://github.com/IngCarlaPezzone/PI1_MLOps_videojuegos/blob/main/main.py) y 
-las funciones para su funcionamiento se encuentran en [api_functions](https://github.com/IngCarlaPezzone/PI1_MLOps_videojuegos/blob/main/api_functions.py). 
+El código para generar la API se encuentra en el archivo [main.py](https://github.com/marco11235813/Proyecto_individual_Steam_v1/blob/main/main.py). 
 En caso de querer ejecutar la API desde localHost se deben seguir los siguientes pasos:
 
 - Clonar el proyecto haciendo `git clone https://github.com/IngCarlaPezzone/PI1_MLOps_videojuegos.git`.
