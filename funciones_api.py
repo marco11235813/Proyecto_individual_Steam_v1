@@ -136,7 +136,7 @@ def developer_reviews_analysis(valor: str) -> dict|str:
     desarrollador = valor.lower()
 
     # atrapamos los valores de developers con formato de escritura diferente(mayusculas,minusculas..alternadas o no) pero con los mismos caracteres y disposicion de ellos.
-    if desarrollador not in df_dev_free['developer'].str.lower().unique():
+    if desarrollador not in data['developer'].str.lower().unique():
         return 'No se encuentran registros del developer ingresado'
     
     # iniciamos una serie de contadores donde vamos a acumular los valores
@@ -144,9 +144,8 @@ def developer_reviews_analysis(valor: str) -> dict|str:
     positive = 0
 
     # obtenemos la muestra del desarrollador que nos interesa
-    consulta = df_sentimiento_x_desarrollador[df_sentimiento_x_desarrollador['developer'].str.lower() == desarrollador]
-    print(consulta)
-    print(consulta.dtypes)
+    consulta = data[data['developer'].str.lower() == desarrollador]
+
     # realizamos la evaluacion de valores
     for x in consulta['sentiment_analysis']:
         if x == 0:
