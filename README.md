@@ -26,7 +26,7 @@ Para este proyecto se proporcionaron tres archivos JSON:
 
 * **output_steam_games.json** es un dataset que contiene datos relacionados con los juegos en sí, como los título, el desarrollador, los precios, características técnicas, etiquetas, entre otros datos.
 
-En el documento [Diccionario de datos](https://github.com/IngCarlaPezzone/PI1_MLOps_videojuegos/blob/main/JupyterNotebooks/00_Diccionario_de_datos.md) se encuetran los detalles de cada una de las variables de los conjuntos de datos.
+En el documento [Diccionario de datos](https://github.com/marco11235813/Proyecto_individual_Steam_v1/blob/main/Diccionario_de_datos_STEAM.md) se encuetran los detalles de cada una de las variables de los conjuntos de datos.
 
 ## Tareas desarrolladas
 
