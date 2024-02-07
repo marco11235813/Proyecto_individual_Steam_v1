@@ -198,7 +198,7 @@ async def endpoint5(empresa_desarrolladora: str):
     Parámetros:
         - empresa_desarrolladora (str): Nombre de la empresa desarrolladora para la cual se realiza el análisis de sentimiento. Debe ser un string, ejemplo: Valve
     
-    Ejemplo de retorno: {'Valve' : [Negative = 182, Neutral = 120, Positive = 278]}
+    Ejemplo de retorno: {'Valve' : [Negative = 182, Positive = 278]}
     """
     try:
         result = developer_reviews_analysis(empresa_desarrolladora)
