@@ -122,7 +122,7 @@ def best_developer_year(año: int ) -> str|None:
     return f'Ranking desarrolladores de juegos mas recomendados: "Puesto 1": {consulta[0]}, "Puesto 2": {consulta[1]}, "Puesto 3": {consulta[2]}'
 
 
-def developer_reviews_analysis(valor: str) -> dict:
+def developer_reviews_analysis(valor: str) -> dict|str:
 
 
     """Esta funcion es utilizada para obtener el registro de reseñas de usuarios para una desarrolladora determinada, 
@@ -146,7 +146,8 @@ def developer_reviews_analysis(valor: str) -> dict:
 
     # obtenemos la muestra del desarrollador que nos interesa
     consulta = df_sentimiento_x_desarrollador[df_sentimiento_x_desarrollador['developer'].str.lower() == desarrollador]
-
+    print(consulta)
+    print(consulta.dtypes)
     # realizamos la evaluacion de valores
     for x in consulta['sentiment_analysis']:
         if x == 0:
@@ -164,7 +165,7 @@ def developer_reviews_analysis(valor: str) -> dict:
     
 
     # return f'{desarrollador}: {dicc[desarrollador]}'
-    return dicc
+    return str(dicc)
 
 
 def item_recomendation(item):
