@@ -9,7 +9,7 @@ import numpy as np
 # df_user_recom_dev_pos_unido = pd.read_parquet('../Proyecto_Individual_1-v1/data/df_user_recom_dev_pos.parquet')
 # df_recomendaciones = pd.read_parquet('../Proyecto_Individual_1-v1/data/recomendaciones_item_item.parquet')
 
-df_sentimiento_x_desarrollador = pd.read_parquet('data/df_dev_free.parquet')
+df_sentimiento_x_desarrollador = pd.read_parquet('data/df_sentimiento_x_desarrollador.parquet')
 df_dev_free = pd.read_parquet('data/df_dev_free.parquet')
 df_games_reviews = pd.read_parquet('data/df_games_reviews.parquet')
 df_playtime_user_final = pd.read_parquet('data/df_playtime_user_final.parquet')
@@ -131,7 +131,6 @@ def developer_reviews_analysis(valor: str) -> dict|str:
     
     """
     data = df_sentimiento_x_desarrollador
-    data['sentiment_analysis'] = data['sentiment_analysis'].apply(lambda x: int(x))
 
     # transformamos en minuscula los caracteres de valor y lo guardamos en una variable
     desarrollador = valor.lower()
@@ -161,11 +160,11 @@ def developer_reviews_analysis(valor: str) -> dict|str:
     desarrollador = consulta['developer'].unique()
 
     # creamos un diccionario al que le asignamos el nombre del desarrollador y los valores acumulados de sentiment_analysis de acuerdo a su valor
-    dicc = {desarrollador[0]: f'Negative= {str(negative)}, Positive= {str(positive)}'}
+    dicc = {desarrollador[0]: f'Negative= {negative}, Positive= {positive}'}
     
 
     # return f'{desarrollador}: {dicc[desarrollador]}'
-    return str(dicc)
+    return dicc
 
 
 def item_recomendation(item):
