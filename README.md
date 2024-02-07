@@ -46,7 +46,7 @@ Uno de los pedidos para este proyecto fue aplicar un análisis de sentimiento a 
 
 Dado que el objetivo de este proyecto es realizar una prueba de concepto, se realiza un análisis de sentimiento básico utilizando TextBlob que es una biblioteca de procesamiento de lenguaje natural (NLP) en Python. El objetivo de esta metodología es asignar un valor numérico a un texto, en este caso a los comentarios que los usuarios dejaron para un juego determinado, para representar si el sentimiento expresado en el texto es negativo, neutral o positivo. 
 
-Esta metodología toma una revisión de texto como entrada, utiliza TextBlob para calcular la polaridad de sentimiento y luego clasifica la revisión como negativa, neutral o positiva en función de la polaridad calculada. En este caso, se consideraron las polaridades por defecto del modelo, el cuál utiliza umbrales -0.2 y 0.2, siendo polaridades negativas por debajo de -0.2, positivas por encima de 0.2 y neutrales entre medio de ambos.
+Esta metodología toma una revisión de texto como entrada, utiliza TextBlob para calcular la polaridad de sentimiento y luego clasifica la revisión como negativa, neutral o positiva en función de la polaridad calculada. En este caso, se consideraron las polaridades por defecto del modelo, el cuál utiliza umbrales -0.1 y 0.1, siendo polaridades negativas por debajo de -0.1, positivas por encima de 0.1 y neutrales entre medio de ambos.
 
 Por otra parte, y bajo el mismo criterio de optimizar los tiempos de respuesta de las consultas en la API y teniendo en cuenta las limitaciones de almacenamiento en el servicio de nube para deployar la API, se realizaron dataframes auxiliares para cada una de las funciones solicitadas. En el mismo sentido, se guardaron estos dataframes en formato *parquet* que permite una compresión y codificación eficiente de los datos.
 
@@ -72,18 +72,18 @@ El desarrollo para la creación del modelo se encuentra en la carpeta [modelo_ma
 ### Desarrollo de API
 
 Para el desarrolo de la API se decidió utilizar el framework FastAPI, creando las siguientes funciones:
-* **developer**: En esta función tiene por parametro 'valor'  devuelve la cantidad de items y porcentaje de contenido Free por año según  la empresa desarrolladora
+* **endpoint1** (developer): En esta función tiene por parametro 'valor'  devuelve la cantidad de items y porcentaje de contenido Free por año según  la empresa desarrolladora
     ingresada.
 
-* **userdata**: Esta función tiene por parámentro 'user_id' y devulve la cantidad de dinero gastado por el usuario, el porcentaje de recomendaciones que realizó sobre la cantidad de reviews que se analizan y la cantidad de items que consume el mismo.
+* **endpoint2** (userdata): Esta función tiene por parámentro 'user_id' y devuelve la cantidad de dinero gastado por el usuario, el porcentaje de recomendaciones que realizó sobre la cantidad de reviews que se analizan y la cantidad de items que consume el mismo.
 
-* **UserForGenre**: Esta función recibe como parámetro el género de un videojuego y devuelve el usuario que acumula más horas jugadas para el género dado y una lista de la acumulación de horas jugadas por año de lanzamiento.
+* **endpoint3** (UserForGenre): Esta función recibe como parámetro el género de un videojuego y devuelve el usuario que acumula más horas jugadas para el género dado y una lista de la acumulación de horas jugadas por año de lanzamiento.
 
-* **best_developer_yearr**: Esta función recibe como parámetro un año y Devuelve el top 3 de desarrolladoras con juegos MAS recomendados por usuarios para el año dado.
+* **endpoint4** (best_developer_year): Esta función recibe como parámetro un año y Devuelve el top 3 de desarrolladoras con juegos MAS recomendados por usuarios para el año dado.
 
-* **developer_reviews_analysis**: Esta función recibe como parámetro un desarrollador y se devuelve un diccionario con el nombre del desarrollador como llave y una lista con la cantidad total de registros de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento como valor positivo o negativo.
+* **endpoint5** (developer_reviews_analysis): Esta función recibe como parámetro un desarrollador y se devuelve un diccionario con el nombre del desarrollador como llave y una lista con la cantidad total de registros de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento como valor positivo o negativo.
 
-* **item_recomendacion**: Esta funcion toma como parametro el id de un juego (item) y realiza una busqueda de similitud
+* **endpoint6** (item_recomendacion): Esta funcion toma como parametro el id de un juego (item) y realiza una busqueda de similitud
     para encontrar juegos similares
     esta busqueda se basa en un modelo de recomendacion centrado en la similitud del coseno
     devuelve una lista de los 5 juegos recomendados mas similares al juego ingresado
@@ -106,5 +106,7 @@ En caso de querer ejecutar la API desde localHost se deben seguir los siguientes
 ### Deployment
 Se desplegó el modelo de recomendación como parte de la API.
 Para el deploy de la API se seleccionó la plataforma Render que es una nube unificada para crear y ejecutar aplicaciones y sitios web, permitiendo el despliegue automático desde GitHub.
-El servicio queda corriendo en `https://proyecto-individual-v1.onrender.com`
+El servicio queda corriendo [aqui](https://proyecto-individual-v1.onrender.com)
+
+### Video
 
