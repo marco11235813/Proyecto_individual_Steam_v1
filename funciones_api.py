@@ -2,19 +2,19 @@ import pandas as pd
 import numpy as np
 
 
-# df_sentimiento_x_desarrollador = pd.read_parquet('../Proyecto_Individual_1-v1/data/df_sentimiento_x_desarrollador.parquet')
-# df_dev_free = pd.read_parquet('../Proyecto_Individual_1-v1/data/df_dev_free.parquet')
-# df_games_reviews = pd.read_parquet('../Proyecto_Individual_1-v1/data/df_games_reviews.parquet')
-# df_playtime_user_final = pd.read_parquet('../Proyecto_Individual_1-v1/data/df_playtime_user_final.parquet')
-# df_user_recom_dev_pos_unido = pd.read_parquet('../Proyecto_Individual_1-v1/data/df_user_recom_dev_pos.parquet')
-# df_recomendaciones = pd.read_parquet('../Proyecto_Individual_1-v1/data/recomendaciones_item_item.parquet')
+df_sentimiento_x_desarrollador = pd.read_parquet('Proyecto_Individual_1-v1/data/df_sentimiento_x_desarrollador.parquet')
+df_dev_free = pd.read_parquet('Proyecto_Individual_1-v1/data/df_dev_free.parquet')
+df_games_reviews = pd.read_parquet('Proyecto_Individual_1-v1/data/df_games_reviews.parquet')
+df_playtime_user_final = pd.read_parquet('Proyecto_Individual_1-v1/data/df_playtime_user_final.parquet')
+df_user_recom_dev_pos_unido = pd.read_parquet('Proyecto_Individual_1-v1/data/df_user_recom_dev_pos.parquet')
+df_recomendaciones = pd.read_parquet('Proyecto_Individual_1-v1/data/recomendaciones_item_item.parquet')
 
-df_sentimiento_x_desarrollador = pd.read_parquet('C:/Users/usuario/Desktop/Proyecto_Individual_1/Proyecto_Individual_1-v1/data/df_dev_free.parquet')
-df_dev_free = pd.read_parquet('C:/Users/usuario/Desktop/Proyecto_Individual_1/Proyecto_Individual_1-v1/data/df_dev_free.parquet')
-df_games_reviews = pd.read_parquet('C:/Users/usuario/Desktop/Proyecto_Individual_1/Proyecto_Individual_1-v1/data/df_games_reviews.parquet')
-df_playtime_user_final = pd.read_parquet('C:/Users/usuario/Desktop/Proyecto_Individual_1/Proyecto_Individual_1-v1/data/df_playtime_user_final.parquet')
-df_user_recom_dev_pos_unido = pd.read_parquet('C:/Users/usuario/Desktop/Proyecto_Individual_1/Proyecto_Individual_1-v1/data/df_user_recom_dev_pos.parquet')
-df_recomendaciones = pd.read_parquet('C:/Users/usuario/Desktop/Proyecto_Individual_1/Proyecto_Individual_1-v1/data/recomendaciones_item_item.parquet')
+# df_sentimiento_x_desarrollador = pd.read_parquet('C:/Users/usuario/Desktop/Proyecto_Individual_1/Proyecto_Individual_1-v1/data/df_dev_free.parquet')
+# df_dev_free = pd.read_parquet('C:/Users/usuario/Desktop/Proyecto_Individual_1/Proyecto_Individual_1-v1/data/df_dev_free.parquet')
+# df_games_reviews = pd.read_parquet('C:/Users/usuario/Desktop/Proyecto_Individual_1/Proyecto_Individual_1-v1/data/df_games_reviews.parquet')
+# df_playtime_user_final = pd.read_parquet('C:/Users/usuario/Desktop/Proyecto_Individual_1/Proyecto_Individual_1-v1/data/df_playtime_user_final.parquet')
+# df_user_recom_dev_pos_unido = pd.read_parquet('C:/Users/usuario/Desktop/Proyecto_Individual_1/Proyecto_Individual_1-v1/data/df_user_recom_dev_pos.parquet')
+# df_recomendaciones = pd.read_parquet('C:/Users/usuario/Desktop/Proyecto_Individual_1/Proyecto_Individual_1-v1/data/recomendaciones_item_item.parquet')
 
 def developer(valor: str) -> str|int:
 
