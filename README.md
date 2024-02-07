@@ -106,4 +106,5 @@ En caso de querer ejecutar la API desde localHost se deben seguir los siguientes
 ### Deployment
 Se desplegó el modelo de recomendación como parte de la API.
 Para el deploy de la API se seleccionó la plataforma Render que es una nube unificada para crear y ejecutar aplicaciones y sitios web, permitiendo el despliegue automático desde GitHub.
+El servicio queda corriendo en `https://proyecto-individual-v1.onrender.com`
 
